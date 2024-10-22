@@ -1,32 +1,43 @@
-   name: Build and Deploy Jekyll Site to GitHub Pages
+name: Build and Deploy Jekyll Site to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
 
-   on:
-     push:
-       branches:
-         - main  # Replace with your default branch if different
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-       steps:
-         - uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'  # Ensure this matches your project's Ruby version
 
-         - name: Setup Ruby
-           uses: ruby/setup-ruby@v1
-           with:
-             ruby-version: '3.1'  # Specify the Ruby version compatible with your project
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
 
-         - name: Install dependencies
-           run: |
-             gem install bundler
-             bundle install
+      - name: Build the site
+        run: bundle exec jekyll build
 
-         - name: Build the site
-           run: bundle exec jekyll build
+      - name: Verify _site Directory
+        run: |
+          if [ ! -d "./_site" ]; then
+            echo "_site directory not found!"
+            exit 1
+          fi
+          echo "_site directory exists."
 
-         - name: Deploy to GitHub Pages
-           uses: peaceiris/actions-gh-pages@v3
-           with:
-             github_token: ${{ secrets.GITHUB_TOKEN }}
-             publish_dir: ./_site
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
