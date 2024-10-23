@@ -28,54 +28,61 @@
     "relUrl": "/docs/#this-project-consists-of-several-parts"
   },"4": {
     "doc": "Home",
+    "title": "Screenshots",
+    "content": ". ",
+    "url": "/go-ast-docs/docs/#screenshots",
+    
+    "relUrl": "/docs/#screenshots"
+  },"5": {
+    "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/go-ast-docs/docs/",
     
     "relUrl": "/docs/"
-  },"5": {
+  },"6": {
     "doc": "Installation",
     "title": "Installation Guide",
     "content": " ",
     "url": "/go-ast-docs/docs/installation.html#installation-guide",
     
     "relUrl": "/docs/installation.html#installation-guide"
-  },"6": {
+  },"7": {
     "doc": "Installation",
     "title": "Requirements",
     "content": "To install, you need a Linux system with the following components installed: . | Asterisk: Asterisk is an open-source framework for building communications applications. You can install it using the following commands: sudo apt update sudo apt install asterisk . | CUDA 12: CUDA is a parallel computing platform and application programming interface model created by Nvidia. To install CUDA 12, follow these steps: . | Download the CUDA 12 installer from the Nvidia website. | Follow the installation instructions provided on the website. | . | cuDNN 8: cuDNN is a GPU-accelerated library for deep neural networks. To install cuDNN 8, follow these steps: . | Download the cuDNN 8 library from the Nvidia website. | Extract the files and copy them to the CUDA directory. For example: tar -xzvf cudnn-8.0-linux-x64-v8.0.5.39.tgz sudo cp cuda/include/cudnn*.h /usr/local/cuda/include sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64 sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn* . | . | Client-Server AST Repository: To get the client-server AST repository, follow these steps: . | Clone the repository from GitHub: git clone https://github.com/Turrain/client-server-ast.git . | Navigate to the repository directory: cd client-server-ast . | . | . ",
     "url": "/go-ast-docs/docs/installation.html#requirements",
     
     "relUrl": "/docs/installation.html#requirements"
-  },"7": {
+  },"8": {
     "doc": "Installation",
     "title": "Install Dependencies",
     "content": "After cloning the repository, you need to install the dependencies for each language used in the project. Follow these steps: . | JavaScript Dependencies: Navigate to the JavaScript directory and install the dependencies using bun: cd path/to/javascript/directory bun install . | Python Dependencies: Navigate to the Python directory and install the dependencies using pip: cd path/to/python/directory pip install -r requirements.txt . | Go Dependencies: Navigate to the Go directory and install the dependencies using go get: cd path/to/go/directory go get . | . ",
     "url": "/go-ast-docs/docs/installation.html#install-dependencies",
     
     "relUrl": "/docs/installation.html#install-dependencies"
-  },"8": {
+  },"9": {
     "doc": "Installation",
     "title": "Configure Asterisk",
     "content": "To configure Asterisk for handling calls via the AudioSocket Channel interface, follow these steps: . | Open the Asterisk dialplan configuration file, typically located at /etc/asterisk/extensions.conf. | Add the following configuration to define the extension and the call flow: . | . exten = 101,1,Verbose(\"Call to AudioSocket via Channel interface\") same = n,Answer() same = n,Dial(AudioSocket/server.example.com:9092/40325ec2-5efd-4bd3-805f-53576e581d13) same = n,Hangup() . Note: This is an example configuration ",
     "url": "/go-ast-docs/docs/installation.html#configure-asterisk",
     
     "relUrl": "/docs/installation.html#configure-asterisk"
-  },"9": {
+  },"10": {
     "doc": "Installation",
     "title": "Running",
     "content": " ",
     "url": "/go-ast-docs/docs/installation.html#running",
     
     "relUrl": "/docs/installation.html#running"
-  },"10": {
+  },"11": {
     "doc": "Installation",
     "title": "Running Projects Using PM2",
     "content": "PM2 is a process manager for Node.js applications that allows you to keep your applications alive forever, reload them without downtime, and facilitate common system admin tasks. To run the projects using PM2, follow these steps: . | Install PM2: If you haven’t already installed PM2, you can install it globally using npm: npm -g pm2 . | Start the Projects: Navigate to the directory scripts and start the projects using PM2: cd scripts pm2 start pm2.config.js . | . ",
     "url": "/go-ast-docs/docs/installation.html#running-projects-using-pm2",
     
     "relUrl": "/docs/installation.html#running-projects-using-pm2"
-  },"11": {
+  },"12": {
     "doc": "Installation",
     "title": "Installation",
     "content": " ",
