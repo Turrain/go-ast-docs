@@ -11,3 +11,9 @@ layout: "default"
 - [TTS](https://github.com/Turrain/go-ast-tts)
 - [Whisper](https://github.com/Turrain/go-ast-whisper)
 
+## Screenshots
+
+![Screenshot 1](assets/images/Screenshot_1.png)
+![Screenshot 2](assets/images/Screenshot_2.png)
+![Screenshot 3](assets/images/Screenshot_3.png)
+![Screenshot 4](assets/images/Screenshot_4.png)
